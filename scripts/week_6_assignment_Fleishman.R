@@ -34,10 +34,7 @@ ggplot(gapminder, aes(x = gdpPercap, y = lifeExp)) +
 
 # Modify the above code to size the points in proportion to the population of the country. Hint: Are you translating data to a visual feature of the plot?
 
-gapminder_2 <- gapminder %>% 
-  mutate (pop_transform = pop/100000) 
-
-gapminder_2 %>% 
+gapminder %>% 
 ggplot(aes(x = gdpPercap, y = lifeExp)) +
   geom_point(aes(color = continent, size = pop)) + 
   scale_x_log10() +
